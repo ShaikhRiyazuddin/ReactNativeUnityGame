@@ -1,0 +1,9 @@
+pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
+plugins { id("com.facebook.react.settings") }
+extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+rootProject.name = 'RUApp'
+include ':app',':unityLibrary' 
+// ,':react-native-unity-view'
+includeBuild('../node_modules/@react-native/gradle-plugin')
+project(':unityLibrary').projectDir = new File('..\\android\\app\\unityExport\\unityLibrary')
+// project(':react-native-unity-view').projectDir = new File(rootDir, '../node_modules/react-native-unity-view/android')

@@ -1,0 +1,7 @@
+#Sat Sep 14 14:23:20 IST 2024
+base.0=/Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
+base.1=/Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/12/classes.dex
+path.0=0/classes.dex
+path.1=12/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex

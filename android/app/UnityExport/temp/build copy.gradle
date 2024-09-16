@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+
+dependencies {
+    // Unity Ads (replace with the correct version, 4.2.1 is an example)
+    implementation 'com.unity3d.ads:unity-ads:4.+'
+    
+    // Unity Common library (replace with the correct version if available)
+    implementation 'com.unity3d:common:1.0.+'
+    
+    // Google Billing API (replace with the correct version, 5.2.1 is an example)
+    implementation 'com.android.billingclient:billing:5.+'
+}
+
+// dependencies {
+//     implementation fileTree(dir: 'libs', include: ['*.aar'])
+//     implementation(name: 'UnityAds', ext:'aar')
+//     implementation(name: 'common', ext:'aar')
+//     implementation(name: 'billing-5.2.1', ext:'aar')
+
+// }
+
+android {
+    namespace "com.unity3d.player"
+    ndkPath "/Applications/Unity/Hub/Editor/2022.3.46f1/PlaybackEngines/AndroidPlayer/NDK"
+    compileSdkVersion 34
+    buildToolsVersion '34.0.0'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_20
+        targetCompatibility JavaVersion.VERSION_20
+    }
+
+    defaultConfig {
+        minSdkVersion 34
+        targetSdkVersion 35
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+        versionCode 1
+        versionName '1.0'
+        consumerProguardFiles 'proguard-unity.txt'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.bundle', '.unityexp'] + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    packagingOptions {
+        doNotStrip '*/armeabi-v7a/*.so'
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+}
+
+
+

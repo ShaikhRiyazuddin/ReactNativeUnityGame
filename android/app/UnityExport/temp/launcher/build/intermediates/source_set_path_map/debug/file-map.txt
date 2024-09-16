@@ -1,0 +1,9 @@
+com.example.rockpaperscissors.launcher-pngs-0 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/generated/res/pngs/debug
+com.example.rockpaperscissors.launcher-resValues-1 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/generated/res/resValues/debug
+com.example.rockpaperscissors.launcher-rs-2 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/generated/res/rs/debug
+com.example.rockpaperscissors.launcher-mergeDebugResources-3 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.example.rockpaperscissors.launcher-mergeDebugResources-4 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.example.rockpaperscissors.launcher-merged_res-5 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/intermediates/merged_res/debug
+com.example.rockpaperscissors.launcher-debug-6 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/src/debug/res
+com.example.rockpaperscissors.launcher-main-7 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/src/main/res
+com.example.rockpaperscissors.launcher-packaged_res-8 /Users/shaikhriyazuddin/Documents/UnityExport/unityLibrary/build/intermediates/packaged_res/debug

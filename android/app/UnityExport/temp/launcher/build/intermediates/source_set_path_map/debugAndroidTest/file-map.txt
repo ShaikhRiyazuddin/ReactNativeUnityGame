@@ -1,0 +1,5 @@
+com.example.rockpaperscissors.test.launcher-androidTest-0 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/generated/res/resValues/androidTest/debug
+com.example.rockpaperscissors.test.launcher-androidTest-1 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/generated/res/rs/androidTest/debug
+com.example.rockpaperscissors.test.launcher-mergeDebugAndroidTestResources-2 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.example.rockpaperscissors.test.launcher-mergeDebugAndroidTestResources-3 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.example.rockpaperscissors.test.launcher-merged_res-4 /Users/shaikhriyazuddin/Documents/UnityExport/launcher/build/intermediates/merged_res/debugAndroidTest
