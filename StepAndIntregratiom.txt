@@ -1,0 +1,211 @@
+Here’s a personalized version of the documentation, written from your perspective:
+
+---
+
+# **Rock-Paper-Scissors Game with Betting - Unity & React Native Integration**
+
+## **Overview**
+This documentation walks through the process of integrating a Unity-based Rock-Paper-Scissors game with betting functionality into a React Native app. The goal is to let users enter their name, wallet balance, and betting amount through the React Native interface, play the game in Unity, and display the game results and updated wallet balances back in the app.
+
+---
+
+## **Prerequisites**
+
+### **System Requirements**
+To set this up, you’ll need the following tools:
+- **Operating System**: Windows, macOS, or Linux
+- **React Native**: Version 0.66 or higher
+- **Node.js**: Version 14.x or later
+- **Unity**: Version 2021.x or higher
+- **Android Studio**: For Android builds, with SDK and NDK properly configured
+- **Java Development Kit (JDK)**: Version 11 or higher
+- **Xcode** (for iOS builds): Version 13.x or later, with CocoaPods installed
+
+### **Technologies Involved**
+- **Unity**: For game development and handling UI for the game.
+- **React Native**: To create the mobile app interface that collects user inputs.
+- **Gradle**: For Android builds.
+- **CocoaPods**: For managing iOS dependencies.
+
+---
+
+## **Project Structure**
+
+```
+/MyGameProject
+  ├── /android               # Android project directory
+    ├── /app              
+      ├── /UnityExport             # Unity project directory (exported)  
+        ├── /unityLibrary               
+  ├── /ios                   # iOS project directory
+  ├── index.js               # Main entry file for React Native
+  ├── package.json           # React Native project dependencies
+  ├── App.js                 # Main React Native app logic
+
+---
+
+## **Setup Instructions**
+
+### **Step 1: Setting Up React Native**
+
+1. **Install Node.js and React Native CLI**:
+   First, I installed the CLI for React Native and Node.js:
+   ```bash
+   npm install -g react-native-cli
+   ```
+
+2. **Initialize the React Native Project**:
+   Next, I created the project and navigated to it:
+   ```bash
+   react-native init ReactNativeUnityGame
+   cd ReactNativeUnityGame
+   ```
+
+3. **Install Required Dependencies**:
+   I used the following to install the necessary libraries:
+   ```bash
+   npm install @react-native-community/async-storage
+   ```
+
+---
+
+### **Step 2: Creating the Unity Game**
+
+1. **Set Up Unity Project**:
+   I started by opening Unity Hub and creating a new 2D project named `RockPaperScissorsGame`.
+
+2. **Game Logic Implementation**:
+   I implemented the Rock-Paper-Scissors game logic using Unity’s UI for player names, game choices (Rock, Paper, or Scissors), and to display results. The script manages the game’s logic to determine the winner.
+
+3. **Wallet & Betting System**:
+   I added functionality to let players bet on their choice. The game updates the wallet balance based on who wins and loses.
+
+4. **Export the Unity Project**:
+   I exported the Unity project as a library:
+   - Go to `File` → `Build Settings`, choose either Android or iOS, and export the project into a folder called `unityGame` inside the React Native project directory.
+
+---
+
+### **Step 3: Integrating Unity with React Native**
+
+1. **Install Unity Integration for React Native**:
+   I used the `@azesmway/react-native-unity` package for the integration:
+   ```bash
+   npm install @azesmway/react-native-unity --save
+   ```
+
+2. **Link the Native Dependencies**:
+   To link Unity and React Native, I ran:
+   ```bash
+   react-native link @azesmway/react-native-unity
+   ```
+
+3. **Configure Android and iOS**:
+   - **Android**: In `android/build.gradle`, I added the Unity library as a module:
+     ```gradle
+     include ':unityLibrary'
+     project(':unityLibrary').projectDir = new File(rootProject.projectDir, '../UnityExport/unityLibrary')
+     ```
+
+   - **iOS**: In the `Podfile`, I added Unity to the iOS build:
+     ```ruby
+     target 'ReactNativeUnityGame' do
+       use_frameworks!
+       pod 'UnityFramework', :path => '../UnityExport/UnityFramework'
+     end
+     ```
+
+4. **Update `index.js` to Use Unity**:
+   In the `index.js`, I set up React Native to launch the Unity game:
+   ```javascript
+   import UnityView from '@azesmway/react-native-unity';
+
+   const App = () => {
+     return (
+       <UnityView style={{ flex: 1 }} />
+     );
+   };
+
+   export default App;
+   ```
+
+---
+
+### **Step 4: Communication Between Unity and React Native**
+
+1. **Send Player Data from React Native to Unity**:
+   I created a function that sends the player's name, wallet amount, and bet amount from React Native to Unity:
+   ```javascript
+   function sendPlayerData(playerName, walletAmount, betAmount) {
+     UnityView.postMessage("GameController", "SetPlayerData", JSON.stringify({
+       playerName: playerName,
+       walletAmount: walletAmount,
+       betAmount: betAmount
+     }));
+   }
+   ```
+
+2. **Receive Game Results from Unity**:
+   I also added a listener in React Native to receive the game result from Unity:
+   ```javascript
+   UnityView.onUnityMessage((message) => {
+     console.log('Game Result:', message);
+   });
+   ```
+
+---
+
+## **Build and Run Instructions**
+
+### **Android Build**
+
+1. **Generate the APK**:
+   ```bash
+   cd android
+   ./gradlew assembleDebug
+   ```
+
+2. **Run the Android App**:
+   ```bash
+   react-native run-android
+   ```
+
+### **iOS Build**
+
+1. **Install CocoaPods Dependencies**:
+   ```bash
+   cd ios
+   pod install
+   ```
+
+2. **Run the iOS App**:
+   ```bash
+   react-native run-ios
+   ```
+
+---
+
+## **Gameplay Features**
+
+### **React Native UI**:
+- **Input Fields** for player name, wallet balance, and betting amount.
+- A **button** to launch the game.
+
+### **Unity Game**:
+- Rock-Paper-Scissors logic, complete with a betting system.
+- Wallet balance updates based on game outcomes.
+- Game results are sent back to React Native for display.
+
+---
+
+## **Troubleshooting**
+
+1. **Unity Build Errors**:
+   If you run into issues like `libmain.so` errors, ensure the Unity export settings for Android/iOS are correct.
+
+2. **Module Resolution Issues**:
+   If there are errors regarding `index.android.js` or similar, double-check the file paths and configurations.
+
+3. **Communication Errors**:
+   If you’re having trouble passing data between Unity and React Native, verify that the data format is correct (e.g., proper JSON structure).
+
