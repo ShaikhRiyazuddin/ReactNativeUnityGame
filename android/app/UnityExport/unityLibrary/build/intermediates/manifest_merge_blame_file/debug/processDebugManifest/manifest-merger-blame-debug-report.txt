@@ -95,30 +95,26 @@
 51-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:16:111-147
 52            android:theme="@style/UnityThemeSelector" >
 52-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:16:69-110
-53            <intent-filter>
-53-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:17:7-20:23
-54                <category android:name="android.intent.category.LAUNCHER" />
-54-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:18:9-69
-54-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:18:19-66
-55
-56                <action android:name="android.intent.action.MAIN" />
-56-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:19:9-61
-56-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:19:17-58
-57            </intent-filter>
-58
-59            <meta-data
-59-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:21:7-82
-60                android:name="unityplayer.UnityActivity"
-60-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:21:18-58
-61                android:value="true" />
-61-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:21:59-79
-62            <meta-data
-62-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:22:7-70
-63                android:name="notch_support"
-63-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:22:18-46
-64                android:value="true" />
-64-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:22:47-67
-65        </activity>
-66    </application>
-67
-68</manifest>
+53
+54            <!--
+55      <intent-filter>
+56        <category android:name="android.intent.category.LAUNCHER" />
+57        <action android:name="android.intent.action.MAIN" />
+58      </intent-filter>
+59            -->
+60            <meta-data
+60-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:21:7-82
+61                android:name="unityplayer.UnityActivity"
+61-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:21:18-58
+62                android:value="true" />
+62-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:21:59-79
+63            <meta-data
+63-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:22:7-70
+64                android:name="notch_support"
+64-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:22:18-46
+65                android:value="true" />
+65-->/Users/shaikhriyazuddin/Documents/ReactNative/RUApp/android/app/unityExport/unityLibrary/src/main/AndroidManifest.xml:22:47-67
+66        </activity>
+67    </application>
+68
+69</manifest>
